@@ -3,14 +3,14 @@ import React from 'react';
 import Messages from 'src/components/Messages';
 import Form from 'src/components/Form';
 // == Import
-import './styles.css';
+import './app.scss';
 
 // == Composant
 const App = () => (
-  <div className="app">
+  <div className="chat">
     <Messages />
     <Form />
- </div>
+  </div>
 );
 
 // == Export

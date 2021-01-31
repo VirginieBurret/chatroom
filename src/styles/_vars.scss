@@ -1,0 +1,7 @@
+@use 'sass:color';
+
+$colorMain:#6802C2 ;
+$colorAlt: color.scale($colorMain, $lightness: 80%);
+
+$gutter:1rem;
+$inputHeight:4rem;

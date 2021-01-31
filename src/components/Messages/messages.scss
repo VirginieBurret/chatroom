@@ -1,0 +1,45 @@
+@use 'src/styles/vars';
+
+.messages{
+  height: calc(100vh - #{vars.$inputHeight}); // 60px qu'on laisse pour la zone de l'input
+  //#{} car j'utilise une expression scss dans une fonction css (calc)
+  overflow-y:auto;
+  padding:vars.$gutter;
+}
+
+
+
+.message{
+
+   margin:(vars.$gutter * 2) 0;
+
+   &:first-child{ //pour enlever la grosse marge en haut du 1er message
+     margin-top:0;
+   }
+
+  &-author{
+    margin-left: vars.$gutter;
+    margin-bottom: vars.$gutter*1.2;
+  }
+
+  &-content{
+    background-color:white;
+    padding:vars.$gutter;
+    border-radius: vars.$gutter;
+    display:inline-block; // pour que ça s'adapte à la taille du contenu
+    color:vars.$colorMain;
+    position:relative; //pour servir de point de repère pour ::before pour faire la petite flèche
+    margin-top:vars.$gutter * 0.3 ;
+
+    &::before { //on rajouter un span qui n'y est pas de base, au début de ma zone
+      content:"";
+      position:absolute;
+      bottom:100%;
+      left:vars.$gutter;
+      //pour faire le petit triangle sur la bulle
+      border-right: 15px solid white;
+      border-top:15px solid transparent;
+
+    }
+  }
+}
