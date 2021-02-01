@@ -1,6 +1,7 @@
-import { CHANGE_MESSAGE_IN_CONSTRUCTION, SEND_MESSAGE } from 'src/actions';
+import { CHANGE_MESSAGE_IN_CONSTRUCTION, SEND_MESSAGE, TOGGLE_OPEN } from 'src/actions';
 
 const initialState = {
+  open: true,
   messageInConstruction: '',
   messages: [],
 };
@@ -18,14 +19,14 @@ const reducer = (state = initialState, action = {}) => {
       const getHighestMessageId = () => {
         // on récupère la propriété messages de state dans une constante messages
         const { messages } = state;
-      
+
         if (messages.length > 0) {
           // on récupère un tableau contenant seulement les ids des messages
           const ids = messages.map((message) => message.id);
           // on passe l'ensemble des ids à Math.max (ouverture du tableau ids)
           return Math.max(...ids);
         }
-      
+
         return 0;
       };
       // eslint-disable-next-line no-case-declarations
@@ -48,6 +49,12 @@ const reducer = (state = initialState, action = {}) => {
           ...state.messages, // on déverse tous les messages d'avant dans un nouveau tableau
           newMessage, // + le nouveau message
         ],
+      };
+    case TOGGLE_OPEN:
+      return {
+        ...state,
+        open: !state.open,
+
       };
     default:
       return state;

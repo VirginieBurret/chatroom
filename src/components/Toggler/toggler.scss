@@ -1,0 +1,17 @@
+@use 'src/styles/vars';
+
+.toggler{
+  background-color: white;
+  color:vars.$colorMain;
+  border:none;
+  width:2rem;
+  height:2rem;
+  border-radius: 50%;
+  //pour bien centrer le = sur les deux axes
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  right:100%;
+  top:vars.$gutter;
+}
