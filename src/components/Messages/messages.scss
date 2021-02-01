@@ -30,6 +30,7 @@
     color:vars.$colorMain;
     position:relative; //pour servir de point de repère pour ::before pour faire la petite flèche
     margin-top:vars.$gutter * 0.3 ;
+    min-width: 70px; 
 
     &::before { //on rajouter un span qui n'y est pas de base, au début de ma zone
       content:"";

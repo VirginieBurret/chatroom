@@ -14,8 +14,10 @@ const Form = ({ message, changeMessage, sendMessage }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log('je veux envoyer un message');
-    sendMessage();
-    
+    // eslint-disable-next-line max-len
+    if (message.trim()) { // gérer l'envoie de message vide, trim pour gérer les espaces retire les espaces en début et fin de chaine de caractère
+      sendMessage();// j'envoie que si le message actuel est non vide
+    }
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
