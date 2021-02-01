@@ -1,32 +1,28 @@
 // == Import npm
 import React from 'react';
 import Messages from 'src/components/Messages';
-import Form from 'src/components/Form';
+import Form from 'src/containers/Form';
 // == Import
 import './app.scss';
-
-const messageEnConstruction = 'Salut ça';
 
 const messages = [
   {
     id: 1,
     author: 'vir',
-    text: 'salut',
+    text: 'salut ça va',
   },
-
   {
     id: 2,
     author: 'vir',
-    text: 'ça va?',
+    text: 'ouiiii',
   },
-
 ];
 
 // == Composant
 const App = () => (
   <div className="chat">
-    <Messages listOfMessages={messages}/>
-    <Form message={messageEnConstruction} />
+    <Messages listOfMessages={messages} />
+    <Form />
   </div>
 );
 
