@@ -4,3 +4,10 @@ export const changeMessageInConstruction = (newValue) => ({
   type: CHANGE_MESSAGE_IN_CONSTRUCTION,
   newValue, //  newValue : newValue
 });
+
+export const SEND_MESSAGE = 'SEND_MESSAGE';
+
+export const sendMessage = () => ({
+  type: SEND_MESSAGE,
+
+});
