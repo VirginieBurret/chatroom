@@ -3,7 +3,7 @@ import { changeMessageInConstruction } from 'src/actions';
 import Form from 'src/components/Form';
 
 const mapStateToProps = (state) => ({
-  message: state.messageEnConstruction,
+  message: state.messageInConstruction,
 });
 
 const mapDispatchToProps = (dispatch) => ({
