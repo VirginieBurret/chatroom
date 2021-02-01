@@ -1,9 +1,13 @@
-import { CHANGE_MESSAGE_IN_CONSTRUCTION, SEND_MESSAGE, TOGGLE_OPEN } from 'src/actions';
+import {
+  CHANGE_MESSAGE_IN_CONSTRUCTION, SEND_MESSAGE, TOGGLE_OPEN, CHANGE_INPUT_VALUE,
+} from 'src/actions';
 
 const initialState = {
   open: true,
   messageInConstruction: '',
   messages: [],
+  email: '',
+  password: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -55,6 +59,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         open: !state.open,
 
+      };
+    case CHANGE_INPUT_VALUE:
+      return {
+        ...state,
+        [action.key]:action.newValue,
       };
     default:
       return state;

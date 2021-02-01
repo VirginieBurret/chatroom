@@ -18,3 +18,13 @@ export const toggleOpen = () => ({
   type: TOGGLE_OPEN,
 
 });
+
+export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
+
+export const changeInputValue = (newValue, key) => ({
+  type: CHANGE_INPUT_VALUE,
+  newValue,
+  key,
+
+});
+

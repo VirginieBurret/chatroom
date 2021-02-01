@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import './settings.scss';
 
 const Settings = ({ open }) => (
-  <div className={classNames('settings', { 'settings--open': open })}>
+  <div className={classNames('settings', { 'settings--open': open })}> 
+ 
     <Toggler open={open} />
     { open && <LoginForm />}
   </div>
@@ -16,3 +17,5 @@ Settings.propTypes = {
   open: PropTypes.bool.isRequired,
 };
 export default Settings;
+
+// la classe setting--open sera présente que si on me donne une donnée à true

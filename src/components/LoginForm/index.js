@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from './Field';
+import Field from 'src/containers/LoginForm/Field';
 import './loginForm.scss';
 
 const LoginForm = () => (
@@ -7,7 +7,7 @@ const LoginForm = () => (
     <Field
       type="email"
       placeholder="Email"
-      name="Email"
+      name="email"
     />
     <Field
       type="password"
