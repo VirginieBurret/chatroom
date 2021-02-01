@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+import { changeMessageInConstruction } from 'src/actions';
 import Form from 'src/components/Form';
 
 const mapStateToProps = (state) => ({
@@ -7,12 +7,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeMessage: (newValue) => {
+  changeMessage: (value) => {
     // console.log(newValue);
-    dispatch({
-      type: 'CHANGE_MESSAGE_IN_CONSTRUCTION',
-      newValue, //  newValue : newValue
-    });
+    dispatch(changeMessageInConstruction(value));
+    // type: 'CHANGE_MESSAGE_IN_CONSTRUCTION',
+    // newValue, //  newValue : newValue
   },
 });
 
