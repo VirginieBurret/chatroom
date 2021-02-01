@@ -2,13 +2,10 @@ import { connect } from 'react-redux';
 
 import Form from 'src/components/Form';
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  
-  return({
-    message: 'test',
-  });
-  
-};
+const mapStateToProps = (state) => ({
+  message: state.messageEnConstruction,
+});
 
-export default connect(mapStateToProps)(Form);
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
