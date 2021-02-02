@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { doLogin } from 'src/actions';
 import LoginForm from 'src/components/LoginForm';
 
-const mapStateToProps = (state) => ({ // je peux la mettre nulle si 'jen ai pas besoin
+const mapStateToProps = (state) => ({ // je peux la mettre nulle si j'en ai pas besoin
 // console.loge(state)
 
 });

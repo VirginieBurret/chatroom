@@ -34,3 +34,12 @@ export const doLogin = () => ({
   type: DO_LOGIN,
 
 });
+
+
+export const MEMORIZE_PSEUDO = 'MEMORIZE_PSEUDO';
+
+export const memorizePseudo = (pseudo) => ({
+  type: MEMORIZE_PSEUDO,
+  pseudo,
+
+});

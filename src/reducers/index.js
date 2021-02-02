@@ -1,5 +1,5 @@
 import {
-  CHANGE_MESSAGE_IN_CONSTRUCTION, SEND_MESSAGE, TOGGLE_OPEN, CHANGE_INPUT_VALUE,
+  CHANGE_MESSAGE_IN_CONSTRUCTION, SEND_MESSAGE, TOGGLE_OPEN, CHANGE_INPUT_VALUE, MEMORIZE_PSEUDO,
 } from 'src/actions';
 
 const initialState = {
@@ -8,11 +8,13 @@ const initialState = {
   messages: [],
   email: '',
   password: '',
+  pseudo: 'Anonyme',
+  logged: false, // initialement on est pas connecté
 };
 
 const reducer = (state = initialState, action = {}) => {
   console.log('dans le reducer', action);
-  
+
   switch (action.type) {
     case CHANGE_MESSAGE_IN_CONSTRUCTION:
       return {
@@ -38,7 +40,7 @@ const reducer = (state = initialState, action = {}) => {
       // eslint-disable-next-line no-case-declarations
       const newMessage = { // faire une const dans un case c'est pas top
         id: (getHighestMessageId(state) + 1),
-        author: 'vir',
+        author: state.pseudo,
         text: state.messageInConstruction,
       };
 
@@ -65,7 +67,13 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_INPUT_VALUE:
       return {
         ...state,
-        [action.key]:action.newValue,
+        [action.key]: action.newValue,
+      };
+    case MEMORIZE_PSEUDO:
+      return {
+        ...state,
+        pseudo: action.pseudo,
+        logged: true, // quand on mémorise un pseudo on se considère comme conecté.
       };
     default:
       return state;
