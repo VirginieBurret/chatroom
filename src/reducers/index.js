@@ -11,6 +11,8 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
+  console.log('dans le reducer', action);
+  
   switch (action.type) {
     case CHANGE_MESSAGE_IN_CONSTRUCTION:
       return {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Toggler from 'src/containers/Toggler';
-import LoginForm from 'src/components/LoginForm';
+import LoginForm from 'src/containers/LoginForm';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './settings.scss';

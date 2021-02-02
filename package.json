@@ -47,6 +47,7 @@
     "webpack-merge": "*"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "feather-icons-react": "^0.4.1",
     "prop-types": "*",
