@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({ // je peux la mettre nulle si 'jen ai pas 
 const mapDispatchToProps = (dispatch) => ({
   login: () => {
     //console.log('je veux me connecter container');
-    dispatch(doLogin);// je dispatche mon action 
+    dispatch(doLogin());// je dispatche mon action 
   },
 });
 

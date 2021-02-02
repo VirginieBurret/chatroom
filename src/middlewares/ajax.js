@@ -3,7 +3,7 @@ import axios from 'axios';
 const ajax = (store) => (next) => (action) => {
   console.log('dans ajax ', action);
   switch (action.type) {
-    case 'DO LOGIN':
+    case 'DO_LOGIN':
       axios.post('/login', { // en premier argument de post je passe le endpoint et en 2ème argument directement des data
         email: 'bouclierman@herocorp.io',
         password: 'jennifer',
